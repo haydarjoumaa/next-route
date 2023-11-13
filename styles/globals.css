@@ -13,6 +13,7 @@ body {
   font-family: 'Open Sans', 'Lato', sans-serif;
   color: #414141;
   background-color: #e4f1f1;
+  height:100vh;
 } 
 
 h1,
@@ -34,4 +35,7 @@ ul {
 .center {
   margin: auto;
   text-align: center;
+}
+svg{
+  display:inline-block;
 }

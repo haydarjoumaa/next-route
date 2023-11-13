@@ -39,6 +39,9 @@ const DUMMY_EVENTS: eventDataInterface[] = [
 export const featureEvents = () =>
   DUMMY_EVENTS.filter((event) => event.isFeatured);
 
+export const getEventById = (id: string) =>
+  DUMMY_EVENTS.find((event) => event.id === id);
+
 export const readabelDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", {
     day: "numeric",

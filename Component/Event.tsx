@@ -1,22 +1,28 @@
-import Link from "next/link";
 import { eventDataInterface } from "../interace";
 import { foramtedString, readabelDate } from "@/utiles/utils";
-import { Card } from "./Card";
+import { Card } from "./UI/Card";
+import CalendarIcon from "./Icons/CalendarIcon";
+import ButtonLink from "./UI/ButtonLink";
+import LocationIcon from "./Icons/LocationIcon";
 
 export const Event = ({ eventData }: { eventData: eventDataInterface }) => {
   return (
     <Card>
       <div className="flex gap-4">
         <img src={eventData.image} alt={eventData.description} />
-        <div>
-          <h1>{eventData.title}</h1>
+        <div className="flex flex-col gap-10 w-full">
+          <h1 className="text-3xl	font-bold">{eventData.title}</h1>
           <div>
-            <time>{readabelDate(eventData.date)}</time>
+            <time className="font-bold text-2xl">
+              <CalendarIcon /> {readabelDate(eventData.date)}
+            </time>
           </div>
           <div>
-            <address>{foramtedString(eventData.location)}</address>
+            <address className="text-xl">
+              <LocationIcon /> {foramtedString(eventData.location)}
+            </address>
           </div>
-          <Link href={`/${eventData.id}`}>Explore Event</Link>
+          <ButtonLink link={`/events/${eventData.id}`} />
         </div>
       </div>
     </Card>
