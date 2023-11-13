@@ -1,6 +1,6 @@
 import { eventDataInterface } from "../interace";
 
-const DUMMY_EVENTS: eventDataInterface[] = [
+export const DUMMY_EVENTS: eventDataInterface[] = [
   {
     id: "e1",
     title: "Programming for everyone",
@@ -20,7 +20,7 @@ const DUMMY_EVENTS: eventDataInterface[] = [
     location: "New Wall Street 5, 98765 New Work",
     date: "2021-05-30",
     image:
-      "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
+      "https://img.freepik.com/free-photo/forest-landscape_71767-127.jpg?size=626&ext=jpg&ga=GA1.1.901340414.1668711780&semt=ais",
     isFeatured: true,
   },
   {
@@ -31,7 +31,7 @@ const DUMMY_EVENTS: eventDataInterface[] = [
     location: "My Street 12, 10115 Broke City",
     date: "2022-04-10",
     image:
-      "https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg",
+      "https://img.freepik.com/free-photo/view-old-tree-lake-with-snow-covered-mountains-cloudy-day_181624-28954.jpg?size=626&ext=jpg&ga=GA1.1.901340414.1668711780&semt=ais",
     isFeatured: true,
   },
 ];

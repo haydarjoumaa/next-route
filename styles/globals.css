@@ -39,3 +39,6 @@ ul {
 svg{
   display:inline-block;
 }
+#__next{
+  height:100vh;
+}

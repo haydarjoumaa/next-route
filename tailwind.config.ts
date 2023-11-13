@@ -15,6 +15,9 @@ const config: Config = {
       },
     },
   },
+  minWidth: {
+    "2/3": "60%",
+  },
   plugins: [],
 };
 export default config;
