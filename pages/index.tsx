@@ -1,16 +1,14 @@
-import { Card } from "@/Component/UI/Card";
-import { Event } from "../Component/Event";
-import { featureEvents } from "../utiles/utils";
+import { Event } from "@/Component/Event";
+import { DUMMY_EVENTS } from "@/utiles/utils";
 
 const HomePage = () => {
+  const events = DUMMY_EVENTS;
   return (
-    <>
-      <div className="flex mt-10 gap-20 justify-center items-center flex-col">
-        {featureEvents().map((event) => {
-          return <Event eventData={event} key={event.id} />;
-        })}
-      </div>
-    </>
+    <div className="flex mt-40 gap-20 justify-center items-center flex-col">
+      {events.map((event) => {
+        return <Event eventData={event} />;
+      })}
+    </div>
   );
 };
 export default HomePage;

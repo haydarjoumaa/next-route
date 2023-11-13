@@ -8,9 +8,13 @@ import LocationIcon from "./Icons/LocationIcon";
 export const Event = ({ eventData }: { eventData: eventDataInterface }) => {
   return (
     <Card>
-      <div className="flex gap-4">
-        <img src={eventData.image} alt={eventData.description} />
-        <div className="flex flex-col gap-10 w-full">
+      <div className="flex gap-4 h-[400px]">
+        <img
+          src={eventData.image}
+          alt={eventData.description}
+          className="min-w-[60%]  object-fill"
+        />
+        <div className="flex flex-col gap-10 w-full mt-4">
           <h1 className="text-3xl	font-bold">{eventData.title}</h1>
           <div>
             <time className="font-bold text-2xl">
