@@ -1,4 +1,4 @@
-import { Card } from "@/Component/Card";
+import { Card } from "@/Component/UI/Card";
 import { Event } from "../Component/Event";
 import { featureEvents } from "../utiles/utils";
 
