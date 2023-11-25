@@ -13,6 +13,12 @@ const Navbar = () => {
           <Link href="/" className=" hover:underline text-teal-200">
             All Events
           </Link>
+          <span className="ml-4">
+            {" "}
+            <Link href="/events" className=" hover:underline text-teal-200">
+              Events
+            </Link>
+          </span>
         </div>
       </div>
     </nav>

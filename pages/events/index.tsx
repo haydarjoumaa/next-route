@@ -1,12 +1,17 @@
-import { Event } from "@/Component/Event";
-import { featureEvents } from "@/utiles/utils";
+import AllEvents from "@/Component/EventFolder/AllEvents";
+import EventFilter from "@/Component/EventFolder/EventFilter";
+import { useRouter } from "next/router";
 
 const Events = () => {
+  const router = useRouter();
+  const sumbitFilter = (year: string, month: string) => {
+    router.push(`/events/${year}/${month}`);
+    return;
+  };
   return (
-    <div className="flex mt-40 gap-20 justify-center items-center flex-col">
-      {featureEvents().map((event) => {
-        return <Event eventData={event} key={event.id} />;
-      })}
+    <div className="flex mt-40 flex-col items-center">
+      <EventFilter filterHandler={sumbitFilter} />
+      <AllEvents />
     </div>
   );
 };

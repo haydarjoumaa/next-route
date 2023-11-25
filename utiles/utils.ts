@@ -42,6 +42,15 @@ export const featureEvents = () =>
 export const getEventById = (id: string) =>
   DUMMY_EVENTS.find((event) => event.id === id);
 
+export const filterDataByData = (month: number, year: number) => {
+  return DUMMY_EVENTS.filter((event) => {
+    const date = new Date(event.date);
+    console.log(date.getFullYear() === year);
+
+    return date.getFullYear() === year && date.getMonth() === month;
+  });
+};
+
 export const readabelDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
@@ -50,3 +59,18 @@ export const readabelDate = (date: string) =>
   });
 
 export const foramtedString = (data: string) => data.replace(", ", "\n");
+
+export const monthNames = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];

@@ -1,9 +1,9 @@
-import { eventDataInterface } from "../interace";
+import { eventDataInterface } from "../../interace";
 import { foramtedString, readabelDate } from "@/utiles/utils";
-import { Card } from "./UI/Card";
-import CalendarIcon from "./Icons/CalendarIcon";
-import ButtonLink from "./UI/ButtonLink";
-import LocationIcon from "./Icons/LocationIcon";
+import { Card } from "../UI/Card";
+import CalendarIcon from "../Icons/CalendarIcon";
+import ButtonLink from "../UI/ButtonLink";
+import LocationIcon from "../Icons/LocationIcon";
 
 export const Event = ({ eventData }: { eventData: eventDataInterface }) => {
   return (
