@@ -1,13 +1,15 @@
 import EventDetailContent from "@/Component/EventFolder/EventDetailContent";
 import EventDetailHeader from "@/Component/EventFolder/EventDetailHeader";
-import { getEventById } from "@/utiles/utils";
-import { useRouter } from "next/router";
+import { eventDataInterface } from "@/interace";
+import { featureEvents, getEventById, urlEvents } from "@/utiles/utils";
 
-const EventsDetail = () => {
-  const router = useRouter();
-  const choosenEvent = getEventById(router.query.eventsid as string);
+const EventsDetail = ({
+  choosenEvent,
+}: {
+  choosenEvent: eventDataInterface;
+}) => {
   if (typeof choosenEvent == "undefined") {
-    return <p>Event don't Exist</p>;
+    return <p className="mt-20">...Loading</p>;
   }
   return (
     <>
@@ -23,4 +25,39 @@ const EventsDetail = () => {
     </>
   );
 };
+
+export const getStaticPaths = async () => {
+  const response = await fetch(urlEvents);
+
+  const dataJson: eventDataInterface[] = await response.json();
+
+  const featureId = featureEvents(dataJson).map((event) => ({
+    params: { eventsid: event.id },
+  }));
+  return {
+    paths: featureId,
+    fallback: true,
+  };
+};
+
+export const getStaticProps = async ({
+  params,
+}: {
+  params: { eventsid: string };
+}) => {
+  const response = await fetch(urlEvents);
+
+  const dataJson: eventDataInterface[] = await response.json();
+
+  const choosenEvent = getEventById(dataJson, params.eventsid);
+
+  if (!choosenEvent) {
+    return { notFound: true };
+  }
+
+  return {
+    props: { choosenEvent },
+  };
+};
+
 export default EventsDetail;
