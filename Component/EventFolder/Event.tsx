@@ -4,14 +4,17 @@ import { Card } from "../UI/Card";
 import CalendarIcon from "../Icons/CalendarIcon";
 import ButtonLink from "../UI/ButtonLink";
 import LocationIcon from "../Icons/LocationIcon";
+import Image from "next/image";
 
 export const Event = ({ eventData }: { eventData: eventDataInterface }) => {
   return (
     <Card>
       <div className="flex gap-4 h-[400px]">
-        <img
+        <Image
           src={eventData.image}
           alt={eventData.description}
+          width={500}
+          height={500}
           className="min-w-[60%]  object-fill"
         />
         <div className="flex flex-col gap-10 w-full mt-4">
