@@ -1,6 +1,7 @@
 import { foramtedString, readabelDate } from "@/utiles/utils";
 import CalendarIcon from "../Icons/CalendarIcon";
 import LocationIcon from "../Icons/LocationIcon";
+import Image from "next/image";
 
 const EventDetailContent = ({
   img,
@@ -13,9 +14,11 @@ const EventDetailContent = ({
 }) => {
   return (
     <div className="m-auto w-fit justify-center mt-[-100px] bg-gray-800 flex flex-row p-10 rounded shadow-lg">
-      <img
+      <Image
         src={img}
         alt="image"
+        width={400}
+        height={400}
         className="rounded-full border-8 border-sky-50 w-[400px] h-[400px] object-cover mr-20 "
       />
       <div className="flex justify-center gap-12 flex-col  text-xl text-teal-200">
